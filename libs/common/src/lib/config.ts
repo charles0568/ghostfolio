@@ -81,6 +81,20 @@ export const STATISTICS_GATHERING_QUEUE = 'STATISTICS_GATHERING_QUEUE';
 
 export const DEFAULT_COLOR_SCHEME: ColorScheme = 'LIGHT';
 export const DEFAULT_CURRENCY = 'USD';
+// 繁中 fork 新增：預設額外納入台灣與亞洲常見貨幣，避免空 DB 時下拉只有 USD/USX
+export const DEFAULT_ADDITIONAL_CURRENCIES = [
+  'TWD',
+  'JPY',
+  'HKD',
+  'CNY',
+  'EUR',
+  'GBP',
+  'AUD',
+  'KRW',
+  'SGD',
+  'CAD',
+  'CHF'
+];
 export const DEFAULT_DATE_FORMAT_MONTH_YEAR = 'MMM yyyy';
 export const DEFAULT_HOST = '0.0.0.0';
 export const DEFAULT_LANGUAGE_CODE = 'zh-TW';

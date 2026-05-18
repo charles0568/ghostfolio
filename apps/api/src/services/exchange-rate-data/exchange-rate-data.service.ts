@@ -5,6 +5,7 @@ import { MarketDataService } from '@ghostfolio/api/services/market-data/market-d
 import { PrismaService } from '@ghostfolio/api/services/prisma/prisma.service';
 import { PropertyService } from '@ghostfolio/api/services/property/property.service';
 import {
+  DEFAULT_ADDITIONAL_CURRENCIES,
   DEFAULT_CURRENCY,
   DERIVED_CURRENCIES,
   PROPERTY_CURRENCIES
@@ -492,7 +493,11 @@ export class ExchangeRateDataService {
   }
 
   private async prepareCurrencies(): Promise<string[]> {
-    let currencies: string[] = [DEFAULT_CURRENCY];
+    // 繁中 fork：預設納入 DEFAULT_ADDITIONAL_CURRENCIES，讓 TWD/JPY/HKD 等亞洲常用貨幣立即可選
+    let currencies: string[] = [
+      DEFAULT_CURRENCY,
+      ...DEFAULT_ADDITIONAL_CURRENCIES
+    ];
 
     (
       await this.prismaService.account.findMany({
