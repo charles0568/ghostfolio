@@ -266,6 +266,114 @@ docker compose up -d
 
 開啟瀏覽器訪問 `http://localhost:3333`，會自動導向繁體中文版的 `/zh-TW`。
 
+#### d. 群暉 NAS 一鍵部署版（單一檔案、不需另外建 .env）
+
+適合 Synology Container Manager / Portainer 等圖形化介面，把所有設定（含密鑰）直接寫進 docker-compose.yml，省去另外建 `.env` 的步驟。
+
+**注意：請務必把下面標示為 `<改成…>` 的位置替換成你自己的隨機字串！直接複製本範本啟動會讓任何人都能用相同密鑰連線你的服務。**
+
+產生隨機字串的方法（任選其一）：
+
+- **Linux / Mac / 群暉 SSH**：`openssl rand -hex 32`
+- **Windows PowerShell**：`-join ((1..64) | %{ '{0:x}' -f (Get-Random -Max 16) })`
+- **瀏覽器主控台**：`Array.from(crypto.getRandomValues(new Uint8Array(32))).map(b=>b.toString(16).padStart(2,'0')).join('')`
+
+把下列內容存成 `docker-compose.yml`（群暉路徑通常為 `/volume1/docker/ghostfolio/docker-compose.yml`），**用上面任一方法產生 4 組獨立的隨機字串**填入：
+
+```yaml
+name: ghostfolio
+services:
+  ghostfolio:
+    image: docker.io/charles0568/ghostfolio:latest
+    container_name: ghostfolio
+    restart: unless-stopped
+    init: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - 3333:3333
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: <改成隨機字串_REDIS>
+      POSTGRES_DB: ghostfolio-db
+      POSTGRES_USER: ghostfolio
+      POSTGRES_PASSWORD: <改成隨機字串_POSTGRES>
+      ACCESS_TOKEN_SALT: <改成隨機字串_ACCESS_64_HEX>
+      JWT_SECRET_KEY: <改成隨機字串_JWT_64_HEX>
+      DATABASE_URL: postgresql://ghostfolio:<改成隨機字串_POSTGRES>@postgres:5432/ghostfolio-db?connect_timeout=300
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD-SHELL', 'curl -f http://localhost:3333/api/v1/health']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: docker.io/library/postgres:15-alpine
+    container_name: gf-postgres
+    restart: unless-stopped
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_READ_SEARCH
+      - FOWNER
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      POSTGRES_DB: ghostfolio-db
+      POSTGRES_USER: ghostfolio
+      POSTGRES_PASSWORD: <改成隨機字串_POSTGRES>
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -d "$${POSTGRES_DB}" -U $${POSTGRES_USER}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - gf-postgres-data:/var/lib/postgresql/data
+
+  redis:
+    image: docker.io/library/redis:alpine
+    container_name: gf-redis
+    restart: unless-stopped
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      REDIS_PASSWORD: <改成隨機字串_REDIS>
+    command:
+      - /bin/sh
+      - -c
+      - redis-server --requirepass "$${REDIS_PASSWORD}"
+    healthcheck:
+      test: ['CMD-SHELL', 'redis-cli --pass "$${REDIS_PASSWORD}" ping | grep PONG']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  gf-postgres-data:
+```
+
+要點：
+
+1. `<改成隨機字串_POSTGRES>` 出現 **3 次**（ghostfolio 服務的 `POSTGRES_PASSWORD`、`DATABASE_URL` 內、postgres 服務的 `POSTGRES_PASSWORD`），**三處必須一致**。
+2. `<改成隨機字串_REDIS>` 出現 **2 次**（ghostfolio 與 redis 服務各一），**兩處必須一致**。
+3. `<改成隨機字串_ACCESS_64_HEX>` 與 `<改成隨機字串_JWT_64_HEX>` 建議用 64 位元組（hex 字串長度為 64）的隨機字串，且**兩者不要相同**。
+4. 使用 `gf-postgres-data` named volume，Docker 會自動管理權限，群暉不需要事先建立資料夾或 chown。
+5. 啟動指令：在該目錄執行 `docker compose up -d` ；或在 Synology Container Manager 用「**專案 → 建立 → 使用現有的 docker-compose.yml**」匯入。
+6. 開啟瀏覽器訪問 `http://你的主機IP:3333` 會自動跳轉到 `/zh-TW`。第一位註冊的使用者會自動成為 ADMIN。
+
 #### 初始設定
 
 1. 於瀏覽器開啟 http://localhost:3333
