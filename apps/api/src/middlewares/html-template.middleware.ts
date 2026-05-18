@@ -117,7 +117,9 @@ export class HtmlTemplateMiddleware implements NestMiddleware {
 
   public use(request: Request, response: Response, next: NextFunction) {
     const path = request.originalUrl.replace(/\/$/, '');
-    let languageCode = path.substr(1, 2);
+    // 同時支援雙字母語系 (例如 /en/) 與含連字號的擴充語系 (例如 /zh-TW/)
+    const languageMatch = path.match(/^\/([a-zA-Z]{2}(?:-[a-zA-Z]{2,4})?)(?:\/|$)/);
+    let languageCode = languageMatch ? languageMatch[1] : DEFAULT_LANGUAGE_CODE;
 
     if (!SUPPORTED_LANGUAGE_CODES.includes(languageCode)) {
       languageCode = DEFAULT_LANGUAGE_CODE;

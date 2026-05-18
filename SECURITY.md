@@ -1,13 +1,13 @@
-# Security Policy
+# 安全政策
 
-## Reporting Security Issues
+## 回報安全性問題
 
-If you discover a security vulnerability in this repository, please report it to security[at]ghostfol.io. We will acknowledge your report and provide guidance on the next steps.
+若你在本倉庫中發現安全性弱點，請透過 security[at]ghostfol.io 通報。我們會回覆你的通報，並提供後續處理的指引。
 
-To help us resolve the issue, please include the following details:
+為協助我們解決問題，請於通報內附上下列資訊：
 
-- A description of the vulnerability
-- Steps to reproduce the vulnerability
-- Affected versions of the software
+- 弱點的說明
+- 重現該弱點的步驟
+- 受影響的軟體版本
 
-We appreciate your responsible disclosure and will work to address the issue promptly.
+感謝你採取負責任的揭露方式，我們將儘速處理問題。

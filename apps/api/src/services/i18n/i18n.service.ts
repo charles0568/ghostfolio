@@ -1,4 +1,7 @@
-import { DEFAULT_LANGUAGE_CODE } from '@ghostfolio/common/config';
+import {
+  DEFAULT_LANGUAGE_CODE,
+  SOURCE_LANGUAGE_CODE
+} from '@ghostfolio/common/config';
 
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import * as cheerio from 'cheerio';
@@ -31,7 +34,7 @@ export class I18nService implements OnModuleInit {
 
     let translatedText = $(
       `trans-unit[id="${id}"] > ${
-        languageCode === DEFAULT_LANGUAGE_CODE ? 'source' : 'target'
+        languageCode === SOURCE_LANGUAGE_CODE ? 'source' : 'target'
       }`
     ).text();
 
@@ -65,7 +68,8 @@ export class I18nService implements OnModuleInit {
   }
 
   private parseLanguageCode(aFileName: string) {
-    const match = /\.([a-zA-Z]+)\.xlf$/.exec(aFileName);
+    // 支援含連字號的語系代碼，例如 messages.zh-TW.xlf
+    const match = /\.([a-zA-Z]+(?:-[a-zA-Z]+)?)\.xlf$/.exec(aFileName);
 
     return match ? match[1] : DEFAULT_LANGUAGE_CODE;
   }

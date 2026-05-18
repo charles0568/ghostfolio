@@ -13,7 +13,7 @@ export const ghostfolioFearAndGreedIndexSymbol = `${ghostfolioScraperApiSymbolPr
 export const ghostfolioFearAndGreedIndexSymbolCryptocurrencies = `${ghostfolioPrefix}_FEAR_AND_GREED_INDEX_CRYPTOCURRENCIES`;
 export const ghostfolioFearAndGreedIndexSymbolStocks = `${ghostfolioPrefix}_FEAR_AND_GREED_INDEX_STOCKS`;
 
-export const locale = 'en-US';
+export const locale = 'zh-Hant-TW';
 
 export const primaryColorHex = '#36cfcc';
 export const primaryColorRgb = {
@@ -83,7 +83,9 @@ export const DEFAULT_COLOR_SCHEME: ColorScheme = 'LIGHT';
 export const DEFAULT_CURRENCY = 'USD';
 export const DEFAULT_DATE_FORMAT_MONTH_YEAR = 'MMM yyyy';
 export const DEFAULT_HOST = '0.0.0.0';
-export const DEFAULT_LANGUAGE_CODE = 'en';
+export const DEFAULT_LANGUAGE_CODE = 'zh-TW';
+// XLIFF <source> 一律為英文，與「預設使用者語系」分離，避免兩者糾纏
+export const SOURCE_LANGUAGE_CODE = 'en';
 export const DEFAULT_PAGE_SIZE = 50;
 export const DEFAULT_PORT = 3333;
 export const DEFAULT_PROCESSOR_GATHER_ASSET_PROFILE_CONCURRENCY = 1;
@@ -295,7 +297,8 @@ export const SUPPORTED_LANGUAGE_CODES = [
   'pt',
   'tr',
   'uk',
-  'zh'
+  'zh',
+  'zh-TW'
 ];
 
 export const TAG_ID_EMERGENCY_FUND = '4452656d-9fa4-4bd0-ba38-70492e31d180';

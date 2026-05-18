@@ -141,12 +141,17 @@ import { UserModule } from './user/user.module';
             let languageCode = DEFAULT_LANGUAGE_CODE;
 
             try {
-              const code = res.req.headers['accept-language']
+              // 解析 Accept-Language，優先比對完整語系 (例如 zh-TW)，
+              // 找不到才退回主語系 (例如 zh)
+              const acceptLanguage = res.req.headers['accept-language']
                 .split(',')[0]
-                .split('-')[0];
+                .trim();
+              const primary = acceptLanguage.split('-')[0];
 
-              if (SUPPORTED_LANGUAGE_CODES.includes(code)) {
-                languageCode = code;
+              if (SUPPORTED_LANGUAGE_CODES.includes(acceptLanguage)) {
+                languageCode = acceptLanguage;
+              } else if (SUPPORTED_LANGUAGE_CODES.includes(primary)) {
+                languageCode = primary;
               }
             } catch {}
 

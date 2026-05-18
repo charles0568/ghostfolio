@@ -1,72 +1,72 @@
-# Ghostfolio Development Guide
+# Ghostfolio 開發指南
 
-## Development Environment
+## 開發環境
 
-### Prerequisites
+### 前置需求
 
 - [Docker](https://www.docker.com/products/docker-desktop)
-- [Node.js](https://nodejs.org/en/download) (version `>=22.18.0`)
-- Create a local copy of this Git repository (clone)
-- Copy the file `.env.dev` to `.env` and populate it with your data (`cp .env.dev .env`)
+- [Node.js](https://nodejs.org/en/download)（版本 `>=22.18.0`）
+- 在本機建立此 Git 倉庫的副本（clone）
+- 將 `.env.dev` 複製為 `.env` 並填入你的資料（`cp .env.dev .env`）
 
-### Setup
+### 初始設定
 
-1. Run `npm install`
-1. Run `docker compose -f docker/docker-compose.dev.yml up -d` to start [PostgreSQL](https://www.postgresql.org) and [Redis](https://redis.io)
-1. Run `npm run database:setup` to initialize the database schema
-1. Start the [server](#start-server) and the [client](#start-client)
-1. Open https://localhost:4200/en in your browser
-1. Create a new user via _Get Started_ (this first user will get the role `ADMIN`)
+1. 執行 `npm install`
+1. 執行 `docker compose -f docker/docker-compose.dev.yml up -d` 啟動 [PostgreSQL](https://www.postgresql.org) 與 [Redis](https://redis.io)
+1. 執行 `npm run database:setup` 初始化資料庫結構
+1. 啟動 [伺服器](#啟動伺服器) 與 [前端](#啟動前端)
+1. 於瀏覽器開啟 https://localhost:4200/zh-TW
+1. 透過 _Get Started_ 建立新使用者（第一位註冊的使用者會自動成為 `ADMIN` 管理員）
 
-### Start Server
+### 啟動伺服器
 
-#### Debug
+#### 偵錯模式
 
-Run `npm run watch:server` and click _Debug API_ in [Visual Studio Code](https://code.visualstudio.com)
+執行 `npm run watch:server`，然後於 [Visual Studio Code](https://code.visualstudio.com) 中點選 _Debug API_
 
-#### Serve
+#### 啟動服務
 
-Run `npm run start:server`
+執行 `npm run start:server`
 
-### Start Client
+### 啟動前端
 
-#### English (Default)
+#### 繁體中文（預設）
 
-Run `npm run start:client` and open https://localhost:4200/en in your browser.
+執行 `npm run start:client`，並於瀏覽器開啟 https://localhost:4200/zh-TW。
 
-#### Other Languages
+#### 其他語言
 
-To start the client in a different language, such as German (`de`), adapt the `start:client` script in the `package.json` file by changing `--configuration=development-en` to `--configuration=development-de`. Then, run `npm run start:client` and open https://localhost:4200/de in your browser.
+若要以其他語言啟動前端（例如英文 `en`），請修改 `package.json` 中的 `start:client` 腳本，將 `--configuration=development-zh-TW` 改為 `--configuration=development-en`，然後執行 `npm run start:client` 並開啟 https://localhost:4200/en。
 
-### Start _Storybook_
+### 啟動 _Storybook_
 
-Run `npm run start:storybook`
+執行 `npm run start:storybook`
 
-### Migrate Database
+### 資料庫結構遷移
 
-With the following command you can keep your database schema in sync:
+使用下列指令可同步資料庫結構：
 
 ```bash
 npm run database:push
 ```
 
-## Testing
+## 測試
 
-Run `npm test`
+執行 `npm test`
 
-## Experimental Features
+## 實驗性功能
 
-New functionality can be enabled using a feature flag switch from the user settings.
+新功能可透過使用者設定中的功能旗標切換啟用。
 
-### Backend
+### 後端
 
-Remove permission in `UserService` using `without()`
+使用 `UserService` 中的 `without()` 移除權限
 
-### Frontend
+### 前端
 
-Use `@if (user?.settings?.isExperimentalFeatures) {}` in HTML template
+於 HTML 樣板中使用 `@if (user?.settings?.isExperimentalFeatures) {}`
 
-## Component Library (_Storybook_)
+## 元件庫（_Storybook_）
 
 https://ghostfol.io/development/storybook
 
@@ -76,45 +76,45 @@ https://ghostfol.io/development/storybook
 
 `git rebase -i --autosquash main`
 
-## Dependencies
+## 相依套件
 
 ### Angular
 
-#### Upgrade (minor versions)
+#### 升級（minor 版本）
 
-1. Run `npx npm-check-updates --upgrade --target "minor" --filter "/@angular.*/"`
+1. 執行 `npx npm-check-updates --upgrade --target "minor" --filter "/@angular.*/"`
 
 ### Nx
 
-#### Upgrade
+#### 升級
 
-1. Run `npx nx migrate latest`
-1. Make sure `package.json` changes make sense and then run `npm install`
-1. Run `npx nx migrate --run-migrations`
+1. 執行 `npx nx migrate latest`
+1. 確認 `package.json` 的變更合理後，執行 `npm install`
+1. 執行 `npx nx migrate --run-migrations`
 
 ### Prisma
 
-#### Access database via GUI
+#### 透過 GUI 存取資料庫
 
-Run `npm run database:gui`
+執行 `npm run database:gui`
 
 https://www.prisma.io/studio
 
-#### Synchronize schema with database for prototyping
+#### 為原型開發同步結構至資料庫
 
-Run `npm run database:push`
+執行 `npm run database:push`
 
 https://www.prisma.io/docs/concepts/components/prisma-migrate/db-push
 
-#### Create schema migration
+#### 建立結構遷移
 
-Run `npm run prisma migrate dev --name added_job_title`
+執行 `npm run prisma migrate dev --name added_job_title`
 
 https://www.prisma.io/docs/concepts/components/prisma-migrate#getting-started-with-prisma-migrate
 
 ## SSL
 
-Generate `localhost.cert` and `localhost.pem` files.
+產生 `localhost.cert` 與 `localhost.pem` 檔案：
 
 ```
 openssl req -x509 -newkey rsa:2048 -nodes -keyout apps/client/localhost.pem -out apps/client/localhost.cert -days 365 \
