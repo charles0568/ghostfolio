@@ -130,22 +130,141 @@ Ghostfolio 採用 [TypeScript](https://www.typescriptlang.org) 撰寫，並以 [
 - 已 clone 本 Git 倉庫到本機
 - 複製 `.env.example` 為 `.env`，並填入你的資料（`cp .env.example .env`）
 
-#### a. 執行環境
+#### a. 執行環境（推薦，使用預先建置好的繁中映像檔）
 
-執行下列指令，從 [Docker Hub](https://hub.docker.com/r/ghostfolio/ghostfolio) 啟動 Docker 映像檔：
+執行下列指令，從 [Docker Hub](https://hub.docker.com/r/charles0568/ghostfolio) 拉取繁中映像檔並啟動：
 
 ```bash
 docker compose -f docker/docker-compose.yml up -d
 ```
 
+> 此 docker-compose 使用的映像檔為 `docker.io/charles0568/ghostfolio:latest`，
+> 由 GitHub Actions 在每次 push 至 `main` 時自動建置並推送，包含完整繁體中文翻譯與後端 i18n 修正。
+> 支援架構：`linux/amd64`、`linux/arm64`。
+
 #### b. 自行建置並執行
 
-執行下列指令以建置並啟動 Docker 映像檔：
+若你想自己從原始碼建置（例如修改了程式碼或想驗證建置），執行下列指令：
 
 ```bash
 docker compose -f docker/docker-compose.build.yml build
 docker compose -f docker/docker-compose.build.yml up -d
 ```
+
+#### c. 不 clone 整個 repo，直接部署（最精簡）
+
+若你只想在伺服器上部署，不需要原始碼，可以直接建立一個目錄並放入下列兩個檔案：
+
+**`docker-compose.yml`**
+
+```yaml
+name: ghostfolio
+services:
+  ghostfolio:
+    image: docker.io/charles0568/ghostfolio:latest
+    container_name: ghostfolio
+    restart: unless-stopped
+    init: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    env_file:
+      - .env
+    ports:
+      - 3333:3333
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD-SHELL', 'curl -f http://localhost:3333/api/v1/health']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: docker.io/library/postgres:15-alpine
+    container_name: gf-postgres
+    restart: unless-stopped
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_READ_SEARCH
+      - FOWNER
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    env_file:
+      - .env
+    healthcheck:
+      test:
+        ['CMD-SHELL', 'pg_isready -d "$${POSTGRES_DB}" -U $${POSTGRES_USER}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  redis:
+    image: docker.io/library/redis:alpine
+    container_name: gf-redis
+    restart: unless-stopped
+    user: '999:1000'
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    env_file:
+      - .env
+    command:
+      - /bin/sh
+      - -c
+      - redis-server --requirepass "$${REDIS_PASSWORD:?REDIS_PASSWORD variable is not set}"
+    healthcheck:
+      test:
+        ['CMD-SHELL', 'redis-cli --pass "$${REDIS_PASSWORD}" ping | grep PONG']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres:
+```
+
+**`.env`**
+
+```bash
+COMPOSE_PROJECT_NAME=ghostfolio
+
+# Redis 快取
+REDIS_HOST=redis
+REDIS_PORT=6379
+REDIS_PASSWORD=請改成隨機字串
+
+# PostgreSQL 資料庫
+POSTGRES_DB=ghostfolio-db
+POSTGRES_USER=ghostfolio
+POSTGRES_PASSWORD=請改成隨機字串
+
+# 應用程式必要
+ACCESS_TOKEN_SALT=請改成隨機字串
+JWT_SECRET_KEY=請改成隨機字串
+DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?connect_timeout=300
+```
+
+> 產生隨機字串的方法：`openssl rand -hex 32`（建議 `ACCESS_TOKEN_SALT` 與 `JWT_SECRET_KEY` 各產一組獨立的）
+
+然後在該目錄執行：
+
+```bash
+docker compose up -d
+```
+
+開啟瀏覽器訪問 `http://localhost:3333`，會自動導向繁體中文版的 `/zh-TW`。
 
 #### 初始設定
 
