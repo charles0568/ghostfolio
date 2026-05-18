@@ -5,49 +5,40 @@
         Frequently Asked Questions (FAQ)
       </h1>
       <p>
-        Find quick answers to commonly asked questions about the fully managed
-        Ghostfolio cloud offering in our Frequently Asked Questions (FAQ)
-        section.
+        在「常見問題（FAQ）」中快速找到關於 Ghostfolio 雲端託管服務的常見問題解答。
       </p>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>How do I start?</mat-card-title>
+          <mat-card-title>如何開始？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          You can sign up via the
-          <a [routerLink]="routerLinkRegister">Get Started</a> button at the top
-          of the page. You have multiple options to join Ghostfolio: Create an
-          account with a security token or <i>Google Sign</i>. We will guide you
-          to set up your portfolio.
+          你可以透過頁面頂端的
+          <a [routerLink]="routerLinkRegister">立即開始</a> 按鈕註冊。加入 Ghostfolio 有多種方式：使用 Security Token 建立帳號或以
+          <i>Google 登入</i>。系統會引導你完成投資組合的初始設定。
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title
-            >Will you spam me with emails once I sign up?</mat-card-title
-          ></mat-card-header
-        >
+          <mat-card-title>註冊後會收到垃圾郵件嗎？</mat-card-title>
+        </mat-card-header>
         <mat-card-content>
-          No, we do not even collect your email address, so you will not receive
-          any spam emails from us.
+          不會。我們連你的 e-mail 都不會蒐集，所以你不會收到任何來自我們的垃圾郵件。
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>Is it really free?</mat-card-title></mat-card-header
-        >
+          <mat-card-title>真的是免費的嗎？</mat-card-title>
+        </mat-card-header>
         <mat-card-content
-          >Yes, it is! Our
-          <a target="_blank" [href]="pricingUrl">pricing page</a>
-          details everything you get for free.</mat-card-content
+          >是的！我們的
+          <a target="_blank" [href]="pricingUrl">定價頁面</a>
+          清楚列出你可以免費使用哪些功能。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title
-            >What is Ghostfolio Premium?</mat-card-title
-          ></mat-card-header
-        >
+          <mat-card-title>Ghostfolio Premium 是什麼？</mat-card-title>
+        </mat-card-header>
         <mat-card-content
           ><a
             class="align-items-center d-inline-flex"
@@ -57,22 +48,19 @@
               class="d-inline-block ml-1"
               [enableLink]="false"
           /></a>
-          is a fully managed Ghostfolio cloud offering for ambitious investors.
-          Revenue is used to cover operational costs for the hosting
-          infrastructure and professional data providers, and to fund ongoing
-          development. It is the Open Source code base with some extras like the
-          <a [routerLink]="routerLinkMarkets">markets overview</a> and a
-          professional data provider.</mat-card-content
+          是專為有志投資人打造的全託管雲端服務。營收用於支付託管基礎設施與專業資料供應商的營運費用，並資助持續開發。
+          它以開源版本為基礎，並包含一些額外功能，例如
+          <a [routerLink]="routerLinkMarkets">市場總覽</a> 與專業資料供應商。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title
-            >Can I start with a trial version?</mat-card-title
-          ></mat-card-header
-        >
+          <mat-card-title>可以先試用嗎？</mat-card-title>
+        </mat-card-header>
         <mat-card-content
-          >Yes, you can try
+          >可以。註冊 Ghostfolio 後，可在
+          <a [routerLink]="routerLinkAccountMembership">會員資格</a>
+          中申請試用
           <a
             class="align-items-center d-inline-flex"
             target="_blank"
@@ -81,34 +69,27 @@
               class="d-inline-block ml-1"
               [enableLink]="false"
           /></a>
-          by signing up for Ghostfolio and applying for a trial (see
-          <a [routerLink]="routerLinkAccountMembership">Membership</a>). It is
-          easy, free and there is no commitment. You can stop using it at any
-          time.</mat-card-content
+          ，免費、無綁約，隨時可停止使用。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
           <mat-card-title
-            >How can I get a student discount for Ghostfolio
-            Premium?</mat-card-title
+            >如何申請 Ghostfolio Premium 學生優惠？</mat-card-title
           >
         </mat-card-header>
         <mat-card-content
-          >Request your student discount
-          <a href="mailto:hi@ghostfol.io?Subject=Student Discount">here</a> with
-          your university e-mail address.</mat-card-content
+          >以你的校園 e-mail
+          <a href="mailto:hi@ghostfol.io?Subject=Student Discount">寄信給我們</a>
+          申請學生優惠。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title
-            >Does the Ghostfolio Premium subscription renew
-            automatically?</mat-card-title
-          >
+          <mat-card-title>Ghostfolio Premium 訂閱會自動續訂嗎？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          >No,
+          >不會。
           <a
             class="align-items-center d-inline-flex"
             target="_blank"
@@ -117,79 +98,77 @@
               class="d-inline-block ml-1"
               [enableLink]="false"
           /></a>
-          does not include auto-renewal. Upon expiration, you can choose whether
-          to start a new subscription.</mat-card-content
+          沒有自動續訂機制。訂閱到期後，你可以自行決定是否要重新訂閱。</mat-card-content
         >
       </mat-card>
       @if (user?.subscription?.type === 'Premium') {
         <mat-card appearance="outlined" class="mb-3">
           <mat-card-header>
             <mat-card-title
-              >I cannot find my broker in the list of platforms. What can I
-              do?</mat-card-title
+              >平台清單中找不到我的券商，該怎麼辦？</mat-card-title
             >
           </mat-card-header>
           <mat-card-content>
-            Please send an e-mail with the web address of your broker to
-            <a href="mailto:hi@ghostfol.io">hi&#64;ghostfol.io</a> and we are
-            happy to add it.
+            請寄信至
+            <a href="mailto:hi@ghostfol.io">hi&#64;ghostfol.io</a>
+            並附上你的券商網址，我們會樂於將它加入。
           </mat-card-content>
         </mat-card>
       }
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>Which devices are supported?</mat-card-title>
+          <mat-card-title>支援哪些裝置？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          >Ghostfolio works in every modern web browser on smartphones, tablets
-          and desktop computers. For <i>Android</i> users of the managed cloud
-          offering, there is a dedicated Ghostfolio app available in the
+          >Ghostfolio 在所有現代瀏覽器中都能執行，無論是智慧型手機、平板電腦或桌上型電腦。
+          雲端託管版的 <i>Android</i> 使用者另有專屬的 Ghostfolio App 可於
           <a
             href="https://play.google.com/store/apps/details?id=ch.dotsilver.ghostfolio.twa"
-            >Google Play Store</a
-          >.</mat-card-content
-        >
-      </mat-card>
-      <mat-card appearance="outlined" class="mb-3">
-        <mat-card-header>
-          <mat-card-title
-            >What is the best approach to managing backups?</mat-card-title
+            >Google Play 商店</a
           >
-        </mat-card-header>
-        <mat-card-content
-          >It is suggested to regularly back up your data via
-          <a [routerLink]="routerLinkAccount">My Ghostfolio</a> →
-          <i>Export Data</i>.</mat-card-content
+          下載。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>Got any other questions?</mat-card-title>
+          <mat-card-title>備份的最佳做法是什麼？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          >Please join the Ghostfolio
+          >建議定期透過
+          <a [routerLink]="routerLinkAccount">我的 Ghostfolio</a> →
+          <i>匯出資料</i> 備份你的資料。</mat-card-content
+        >
+      </mat-card>
+      <mat-card appearance="outlined" class="mb-3">
+        <mat-card-header>
+          <mat-card-title>還有其他問題嗎？</mat-card-title>
+        </mat-card-header>
+        <mat-card-content
+          >歡迎加入 Ghostfolio
           <a
             href="https://join.slack.com/t/ghostfolio/shared_invite/zt-vsaan64h-F_I0fEo5M0P88lP9ibCxFg"
-            title="Join the Ghostfolio Slack community"
-            >Slack </a
-          >community, post to
+            title="加入 Ghostfolio Slack 社群"
+            >Slack</a
+          >
+          社群、在 X 上發文給
           <a
             href="https://x.com/ghostfolio_"
-            title="Post to Ghostfolio on X (formerly Twitter)"
+            title="在 X（原 Twitter）上向 Ghostfolio 發文"
             >&#64;ghostfolio_</a
           >
           @if (user?.subscription?.type === 'Premium') {
-            , send an e-mail to
-            <a href="mailto:hi@ghostfol.io" title="Send an e-mail"
+            ，或寄信至
+            <a href="mailto:hi@ghostfol.io" title="寄送 e-mail"
               >hi&#64;ghostfol.io</a
             >
           }
-          or start a discussion at
+          ，或到
           <a
             href="https://github.com/ghostfolio/ghostfolio"
-            title="Find Ghostfolio on GitHub"
+            title="在 GitHub 上找到 Ghostfolio"
             >GitHub</a
-          >.</mat-card-content
+          >
+          發起討論。</mat-card-content
         >
       </mat-card>
     </div>

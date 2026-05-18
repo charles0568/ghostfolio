@@ -5,198 +5,175 @@
         Frequently Asked Questions (FAQ)
       </h1>
       <p>
-        Find quick answers to commonly asked questions about Ghostfolio in our
-        Frequently Asked Questions (FAQ) section. Discover what Ghostfolio is,
-        explore its features, and learn about our privacy practices. Get all the
-        information you need in one place.
+        在「常見問題（FAQ）」中快速找到 Ghostfolio 常見問題的解答。了解 Ghostfolio
+        是什麼、有哪些功能，以及我們對隱私的做法，一次取得所有你需要的資訊。
       </p>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>What is Ghostfolio?</mat-card-title>
+          <mat-card-title>Ghostfolio 是什麼？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          Ghostfolio is a lightweight, open source wealth management application
-          for individuals to keep track of their net worth. The software
-          empowers you to make solid, data-driven investment decisions.
+          Ghostfolio 是一款輕量級、開放原始碼的財富管理應用程式，協助個人追蹤自己的淨資產，並以資料驅動的方式做出穩健的投資決策。
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title
-            >What assets can I track with Ghostfolio?</mat-card-title
-          >
+          <mat-card-title>Ghostfolio 可以追蹤哪些資產？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          With Ghostfolio, you can keep track of various assets like stocks,
-          ETFs, bonds, cryptocurrencies and commodities.
+          透過 Ghostfolio 你可以追蹤多種資產，例如股票、ETF、債券、加密貨幣與大宗商品。
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>What else is included in Ghostfolio?</mat-card-title>
+          <mat-card-title>Ghostfolio 還包含哪些功能？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          Please find a feature overview to manage your wealth
-          <a [routerLink]="routerLinkFeatures">here</a>.
+          詳細的財富管理功能總覽請參考
+          <a [routerLink]="routerLinkFeatures">這裡</a>。
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title
-            >Which calculation method does Ghostfolio use for
-            performance?</mat-card-title
-          >
+          <mat-card-title>Ghostfolio 採用哪種績效計算方法？</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          Ghostfolio 採用《<i>Return on Average Investment</i>》（平均投入報酬率，ROAI）計算法，以時間加權的平均投入資金為基準。
+          相較於較簡單的計算方式，ROAI 能在你持續分批投入時，提供更具洞察力的投資績效視角。配息（股利）不納入此計算。
+        </mat-card-content>
+      </mat-card>
+      <mat-card appearance="outlined" class="mb-3">
+        <mat-card-header>
+          <mat-card-title>我可以匿名使用 Ghostfolio 嗎？</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          可以。透過 Security Token 驗證機制，你可以安全且匿名地登入 Ghostfolio，不需要 e-mail、電話號碼或使用者名稱。
+        </mat-card-content>
+      </mat-card>
+      <mat-card appearance="outlined" class="mb-3">
+        <mat-card-header>
+          <mat-card-title>Ghostfolio 為什麼可以免費？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          >Ghostfolio uses the <i>Return on Average Investment</i> (ROAI)
-          calculation method based on the average amount of capital invested
-          over time. ROAI aims to provide a more insightful view of investment
-          performance than simpler approaches, especially when contributions are
-          made over time. Dividends are not part of the
-          calculation.</mat-card-content
-        >
-      </mat-card>
-      <mat-card appearance="outlined" class="mb-3">
-        <mat-card-header>
-          <mat-card-title>Can I use Ghostfolio anonymously?</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          Yes, the authentication system via security token enables you to sign
-          in securely and anonymously to Ghostfolio. There is no need for an
-          e-mail address, phone number, or a username.
-        </mat-card-content>
-      </mat-card>
-      <mat-card appearance="outlined" class="mb-3">
-        <mat-card-header>
-          <mat-card-title>How can Ghostfolio be free?</mat-card-title>
-        </mat-card-header>
-        <mat-card-content
-          >This project is driven by the efforts of contributors from around the
-          world. The
-          <a href="https://github.com/ghostfolio/ghostfolio">source code</a> is
-          fully available as open source software (OSS). Thanks to our generous
+          >本專案由來自世界各地的貢獻者共同推動。
+          <a href="https://github.com/ghostfolio/ghostfolio">原始碼</a> 完全以開放原始碼軟體（OSS）形式公開。
+          感謝慷慨的
           <a class="align-items-center d-inline-flex" [href]="pricingUrl"
             >Ghostfolio Premium<gf-premium-indicator
               class="d-inline-block ml-1"
               [enableLink]="false"
           /></a>
-          users and
-          <a href="https://www.buymeacoffee.com/ghostfolio">sponsors</a> we have
-          the ability to run a free, limited plan for novice
-          investors.</mat-card-content
+          使用者與
+          <a href="https://www.buymeacoffee.com/ghostfolio">贊助者</a>，
+          我們才得以為投資新手提供免費的限定方案。
+        </mat-card-content>
+      </mat-card>
+      <mat-card appearance="outlined" class="mb-3">
+        <mat-card-header>
+          <mat-card-title>你們會販售或變現我的財務資料嗎？</mat-card-title>
+        </mat-card-header>
+        <mat-card-content
+          >不會。我們重視你的隱私，絕不會販售或分享你的財務資料給任何第三方。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title
-            >Do you monetize or sell my financial data?</mat-card-title
-          >
+          <mat-card-title>你們的商業模式是什麼？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          >No, we value your privacy. We do not sell or share your financial
-          data with any third parties.</mat-card-content
-        >
-      </mat-card>
-      <mat-card appearance="outlined" class="mb-3">
-        <mat-card-header>
-          <mat-card-title>What is your business model?</mat-card-title>
-        </mat-card-header>
-        <mat-card-content
-          >By offering
+          >我們透過提供
           <a class="align-items-center d-inline-flex" [href]="pricingUrl"
             >Ghostfolio Premium<gf-premium-indicator
               class="d-inline-block ml-1"
               [enableLink]="false" /></a
-          >, a subscription plan with a managed hosting service and enhanced
-          features, we fund our business while providing added value to our
-          users.</mat-card-content
+          >（含託管服務與進階功能的訂閱方案）作為主要收入來源，在維持營運的同時也為使用者提供額外價值。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>What is your product roadmap?</mat-card-title>
+          <mat-card-title>有產品路線圖嗎？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          >At this time, we do not have a public roadmap
-          available.</mat-card-content
+          >目前我們沒有對外公開的產品路線圖。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
           <mat-card-title
-            >Ghostfolio sounds cool, how can I get involved?</mat-card-title
+            >Ghostfolio 聽起來很酷，我能怎麼參與？</mat-card-title
           >
         </mat-card-header>
         <mat-card-content
-          >Any support for Ghostfolio is welcome. Be it with a
+          >歡迎以任何形式支持 Ghostfolio。包括訂閱
           <a class="align-items-center d-inline-flex" [href]="pricingUrl"
             >Ghostfolio Premium<gf-premium-indicator
               class="d-inline-block ml-1"
               [enableLink]="false"
           /></a>
-          subscription to finance the operational costs for the hosting
-          infrastructure and professional data providers, a positive rating in
-          the
+          來資助託管基礎設施與專業資料供應商的營運費用、到
           <a
             href="https://play.google.com/store/apps/details?id=ch.dotsilver.ghostfolio.twa"
-            >Google Play Store</a
-          >, a star on
-          <a href="https://github.com/ghostfolio/ghostfolio">GitHub</a>,
-          feedback, bug reports, feature requests and of course contributions!
-          You can reach us via Ghostfolio
+            >Google Play 商店</a
+          >
+          評分、給
+          <a href="https://github.com/ghostfolio/ghostfolio">GitHub</a> 加星星、
+          提供意見、回報問題、提出新功能建議，當然也歡迎程式碼貢獻！你可以透過 Ghostfolio
           <a
             href="https://join.slack.com/t/ghostfolio/shared_invite/zt-vsaan64h-F_I0fEo5M0P88lP9ibCxFg"
-            title="Join the Ghostfolio Slack community"
+            title="加入 Ghostfolio Slack 社群"
             >Slack</a
           >
-          community,
+          社群、在 X 上發文給
           <a
             href="https://x.com/ghostfolio_"
-            title="Post to Ghostfolio on X (formerly Twitter)"
+            title="在 X（原 Twitter）上向 Ghostfolio 發文"
             >&#64;ghostfolio_</a
           >
           @if (user?.subscription?.type === 'Premium') {
-            ,
-            <a href="mailto:hi@ghostfol.io" title="Send an e-mail"
+            ，或寄信至
+            <a href="mailto:hi@ghostfol.io" title="寄送 e-mail"
               >hi&#64;ghostfol.io</a
             >
           }
-          or
+          ，或到
           <a
             href="https://github.com/ghostfolio/ghostfolio"
-            title="Find Ghostfolio on GitHub"
+            title="在 GitHub 上找到 Ghostfolio"
             >GitHub</a
-          >.</mat-card-content
+          >
+          聯絡我們。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>Got any other questions?</mat-card-title>
+          <mat-card-title>還有其他問題嗎？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          >Please join the Ghostfolio
+          >歡迎加入 Ghostfolio
           <a
             href="https://join.slack.com/t/ghostfolio/shared_invite/zt-vsaan64h-F_I0fEo5M0P88lP9ibCxFg"
-            title="Join the Ghostfolio Slack community"
-            >Slack </a
-          >community, post to
+            title="加入 Ghostfolio Slack 社群"
+            >Slack</a
+          >
+          社群、在 X 上發文給
           <a
             href="https://x.com/ghostfolio_"
-            title="Post to Ghostfolio on X (formerly Twitter)"
+            title="在 X（原 Twitter）上向 Ghostfolio 發文"
             >&#64;ghostfolio_</a
           >
           @if (user?.subscription?.type === 'Premium') {
-            , send an e-mail to
-            <a href="mailto:hi@ghostfol.io" title="Send an e-mail"
+            ，或寄信至
+            <a href="mailto:hi@ghostfol.io" title="寄送 e-mail"
               >hi&#64;ghostfol.io</a
             >
           }
-          or start a discussion at
+          ，或到
           <a
             href="https://github.com/ghostfolio/ghostfolio"
-            title="Find Ghostfolio on GitHub"
+            title="在 GitHub 上找到 Ghostfolio"
             >GitHub</a
-          >.</mat-card-content
+          >
+          發起討論。</mat-card-content
         >
       </mat-card>
     </div>

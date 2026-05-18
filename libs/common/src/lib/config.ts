@@ -80,7 +80,10 @@ export const PORTFOLIO_SNAPSHOT_COMPUTATION_QUEUE_PRIORITY_LOW =
 export const STATISTICS_GATHERING_QUEUE = 'STATISTICS_GATHERING_QUEUE';
 
 export const DEFAULT_COLOR_SCHEME: ColorScheme = 'LIGHT';
+// 系統內部運作用的基準貨幣（資料供應商、加密貨幣配對等仰賴 USD），請勿輕易變更
 export const DEFAULT_CURRENCY = 'USD';
+// 繁中 fork 新增：新使用者的預設基準貨幣（baseCurrency），介面顯示用
+export const DEFAULT_USER_BASE_CURRENCY = 'TWD';
 // 繁中 fork 新增：預設額外納入台灣與亞洲常見貨幣，避免空 DB 時下拉只有 USD/USX
 export const DEFAULT_ADDITIONAL_CURRENCIES = [
   'TWD',

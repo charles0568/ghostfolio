@@ -26,6 +26,7 @@ import { PropertyService } from '@ghostfolio/api/services/property/property.serv
 import { TagService } from '@ghostfolio/api/services/tag/tag.service';
 import {
   DEFAULT_CURRENCY,
+  DEFAULT_USER_BASE_CURRENCY,
   DEFAULT_LANGUAGE_CODE,
   PROPERTY_IS_READ_ONLY_MODE,
   PROPERTY_SYSTEM_MESSAGE,
@@ -274,7 +275,8 @@ export class UserService {
 
     // Set default value for base currency
     if (!(user.settings.settings as UserSettings)?.baseCurrency) {
-      (user.settings.settings as UserSettings).baseCurrency = DEFAULT_CURRENCY;
+      (user.settings.settings as UserSettings).baseCurrency =
+        DEFAULT_USER_BASE_CURRENCY;
     }
 
     // Set default value for date range
@@ -589,7 +591,7 @@ export class UserService {
         ...data,
         accounts: {
           create: {
-            currency: DEFAULT_CURRENCY,
+            currency: DEFAULT_USER_BASE_CURRENCY,
             name: this.i18nService.getTranslation({
               id: 'myAccount',
               languageCode: DEFAULT_LANGUAGE_CODE // TODO
@@ -599,7 +601,7 @@ export class UserService {
         settings: {
           create: {
             settings: {
-              currency: DEFAULT_CURRENCY
+              currency: DEFAULT_USER_BASE_CURRENCY
             }
           }
         }

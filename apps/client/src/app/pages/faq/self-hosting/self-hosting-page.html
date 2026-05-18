@@ -5,141 +5,114 @@
         Frequently Asked Questions (FAQ)
       </h1>
       <p>
-        Find quick answers to commonly asked questions about self-hosting
-        Ghostfolio in our Frequently Asked Questions (FAQ) section.
+        在「常見問題（FAQ）」中快速找到自架 Ghostfolio 常見問題的解答。
       </p>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>How do I start?</mat-card-title>
+          <mat-card-title>如何開始？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          If you prefer to run Ghostfolio on your own infrastructure, please
-          find the source code and further instructions on
-          <a href="https://github.com/ghostfolio/ghostfolio">GitHub</a>.
+          若你想在自己的基礎設施上執行 Ghostfolio，請參考
+          <a href="https://github.com/ghostfolio/ghostfolio">GitHub</a> 上的原始碼與相關說明。
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title
-            >Which home server systems is Ghostfolio available
-            on?</mat-card-title
-          >
+          <mat-card-title>Ghostfolio 支援哪些家用伺服器系統？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          The community has made Ghostfolio available on various home server
-          systems, including
-          <a href="https://github.com/bigbeartechworld/big-bear-casaos"
-            >CasaOS</a
-          >,
-          <a href="https://github.com/lildude/ha-addon-ghostfolio"
-            >Home Assistant</a
-          >, <a href="https://www.runtipi.io/docs/apps-available">Runtipi</a>,
-          <a href="https://truecharts.org/charts/stable/ghostfolio"
-            >TrueCharts</a
-          >, <a href="https://apps.umbrel.com/app/ghostfolio">Umbrel</a>, and
-          <a href="https://unraid.net/community/apps?q=ghostfolio">Unraid</a>.
+          社群已將 Ghostfolio 移植到多種家用伺服器系統，包括
+          <a href="https://github.com/bigbeartechworld/big-bear-casaos">CasaOS</a>、
+          <a href="https://github.com/lildude/ha-addon-ghostfolio">Home Assistant</a>、
+          <a href="https://www.runtipi.io/docs/apps-available">Runtipi</a>、
+          <a href="https://truecharts.org/charts/stable/ghostfolio">TrueCharts</a>、
+          <a href="https://apps.umbrel.com/app/ghostfolio">Umbrel</a> 與
+          <a href="https://unraid.net/community/apps?q=ghostfolio">Unraid</a>。
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>How do I add a new currency?</mat-card-title>
+          <mat-card-title>如何新增一種貨幣？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <p>
-            Ghostfolio manages currencies automatically based on all the
-            recorded activities. If you need an additional currency, you can
-            manually enter it.
+            Ghostfolio 會根據所有交易紀錄自動管理貨幣。若需要額外的貨幣，也可以手動新增。
           </p>
           <ol>
-            <li>Open the <i>Admin Control</i> panel</li>
-            <li>Navigate to the <i>Market Data</i> section</li>
-            <li>Click on the <i>+</i> button</li>
-            <li>Switch to <i>Add Currency</i></li>
-            <li>Insert e.g. <code>EUR</code> for Euro</li>
-            <li>Select <i>Filter by Currencies</i></li>
-            <li>Find the entry <i>USDEUR</i></li>
-            <li>
-              Click the menu item <i>Gather Historical Market Data</i> in the
-              dialog
-            </li>
+            <li>開啟「<i>管理</i>」控制台</li>
+            <li>切換到「<i>市場資料</i>」分頁</li>
+            <li>點選右下方的「<i>+</i>」按鈕</li>
+            <li>切換到「<i>新增貨幣</i>」</li>
+            <li>輸入貨幣代碼，例如歐元的 <code>EUR</code></li>
+            <li>使用「<i>依貨幣篩選</i>」</li>
+            <li>找到對應項目，例如 <i>USDEUR</i></li>
+            <li>在對話框中點選「<i>蒐集歷史市場資料</i>」</li>
           </ol>
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
           <mat-card-title
-            >How do I resolve
-            <i>No exchange rate has been found</i> errors?</mat-card-title
+            >如何解決
+            <i>找不到匯率</i> 的錯誤？</mat-card-title
           >
         </mat-card-header>
         <mat-card-content>
           <p>
-            In Ghostfolio, you are responsible for providing the relevant
-            historical exchange rates. This can be done with a one-time import
-            of the data. If you see errors like
-            <i
-              >Historical exchange rate at 2024-01-01 is not available from
-              "EUR" to "USD"</i
-            >
-            do the following:
+            在 Ghostfolio 中，相關的歷史匯率資料需要由你自行提供，可以一次性匯入。當你看到類似
+            <i>「2024-01-01 找不到 EUR 到 USD 的歷史匯率」</i>
+            的錯誤時，請依下列步驟處理：
           </p>
           <ol>
-            <li>Open the <i>Admin Control</i> panel</li>
-            <li>Navigate to the <i>Market Data</i> section</li>
-            <li>Select <i>Filter by Currencies</i></li>
-            <li>Find the entry <i>USDEUR</i></li>
-            <li>
-              Click the menu item <i>Gather Historical Market Data</i> in the
-              dialog
-            </li>
+            <li>開啟「<i>管理</i>」控制台</li>
+            <li>切換到「<i>市場資料</i>」分頁</li>
+            <li>使用「<i>依貨幣篩選</i>」</li>
+            <li>找到項目 <i>USDEUR</i></li>
+            <li>在對話框中點選「<i>蒐集歷史市場資料</i>」</li>
           </ol>
           <p>
-            For derived currencies (e.g. <code>GBp</code>), ensure that you
-            gather the data for the parent currency (e.g. <code>GBP</code>).
+            對於衍生貨幣（如 <code>GBp</code>），請確保已蒐集其母貨幣（如 <code>GBP</code>）的資料。
           </p>
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>What is the concept of platforms?</mat-card-title>
+          <mat-card-title>「平台」這個概念是什麼？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          Platforms are used to group multiple accounts, such as a savings
-          account and a trading account at the same bank. By assigning accounts
-          to the same platform, they are displayed with a unified icon and you
-          gain insights into platform-specific risks.
+          「平台」用來將多個帳戶分組，例如同一家銀行的儲蓄帳戶與交易帳戶。把帳戶歸到同一個平台，介面上會顯示統一的圖示，也能讓你掌握各平台的風險集中度。
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>How do I add a new platform?</mat-card-title>
+          <mat-card-title>如何新增一個平台？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <ol>
-            <li>Open the <i>Admin Control</i> panel</li>
-            <li>Navigate to the <i>Settings</i> section</li>
-            <li>Click on the <i>Add Platform</i> button</li>
+            <li>開啟「<i>管理</i>」控制台</li>
+            <li>切換到「<i>設定</i>」分頁</li>
+            <li>點選「<i>新增平台</i>」按鈕</li>
           </ol>
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>How do I add a new tag?</mat-card-title>
+          <mat-card-title>如何新增一個標籤？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <ol>
-            <li>Open the <i>Admin Control</i> panel</li>
-            <li>Navigate to the <i>Settings</i> section</li>
-            <li>Click on the <i>Add Tag</i> button</li>
+            <li>開啟「<i>管理</i>」控制台</li>
+            <li>切換到「<i>設定</i>」分頁</li>
+            <li>點選「<i>新增標籤</i>」按鈕</li>
           </ol>
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>Which data providers are supported?</mat-card-title>
+          <mat-card-title>支援哪些資料供應商？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          ><code>COINGECKO</code>, <code>GHOSTFOLIO</code> (available with
+          ><code>COINGECKO</code>、<code>GHOSTFOLIO</code>（需訂閱
           <a
             class="align-items-center d-inline-flex"
             target="_blank"
@@ -147,20 +120,16 @@
             >Ghostfolio Premium<gf-premium-indicator
               class="d-inline-block ml-1"
               [enableLink]="false" /></a
-          >), <code>MANUAL</code>, and <code>YAHOO</code> are officially
-          supported while all other data providers are considered
-          experimental.</mat-card-content
+          >）、<code>MANUAL</code> 與 <code>YAHOO</code> 是官方支援的資料供應商，
+          其餘資料供應商皆視為實驗性質。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title
-            >Can I get access to a professional data provider?</mat-card-title
-          >
+          <mat-card-title>我可以使用專業資料供應商嗎？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          >Yes, access to a professional data provider (<code>GHOSTFOLIO</code>)
-          is included with a
+          >可以。訂閱
           <a
             class="align-items-center d-inline-flex"
             target="_blank"
@@ -169,135 +138,123 @@
               class="d-inline-block ml-1"
               [enableLink]="false"
           /></a>
-          subscription via an API key.</mat-card-content
+          後，即可透過 API 金鑰使用專業資料供應商（<code>GHOSTFOLIO</code>）。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>Will you add data provider X?</mat-card-title>
+          <mat-card-title>會新增資料供應商 X 嗎？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          >We are currently not planning to extend the core data providers.
-          However, you can usually integrate data from your desired website by
-          using the <code>MANUAL</code> data source along with a scraper
-          configuration.</mat-card-content
+          >目前沒有擴充核心資料供應商的計畫。不過你通常可以透過 <code>MANUAL</code>
+          資料來源搭配 scraper 設定，把想要的網站資料整合進來。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>How do I set up a benchmark?</mat-card-title>
+          <mat-card-title>如何設定比較基準（Benchmark）？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <p>
-            To compare your performance with benchmarks (see
-            <i>Compare with...</i>) like <i>Bitcoin</i>, <i>Gold</i>, or the
-            <i>S&P 500</i>, follow these steps.
+            若要將你的績效與《Bitcoin》、《Gold》或《S&P 500》等比較基準對照（即「<i>比較對象…</i>」功能），請依下列步驟設定：
           </p>
           <ol>
-            <li>Open the <i>Admin Control</i> panel</li>
-            <li>Navigate to the <i>Market Data</i> section</li>
-            <li>Choose an asset profile</li>
+            <li>開啟「<i>管理</i>」控制台</li>
+            <li>切換到「<i>市場資料</i>」分頁</li>
+            <li>選擇一檔資產設定</li>
             <li>
-              In the dialog, check the <i>Include in Benchmark / Markets</i> box
+              在對話框中勾選「<i>納入比較基準 / 市場</i>」
             </li>
           </ol>
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>How do I add a custom asset?</mat-card-title>
+          <mat-card-title>如何新增自訂資產？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <p>
-            If you want to track an asset that is not available from any data
-            provider, you can create a custom asset as follows.
+            若想追蹤資料供應商沒有提供的資產，可以依下列方式建立自訂資產：
           </p>
           <ol>
-            <li>Open the <i>Admin Control</i> panel</li>
-            <li>Navigate to the <i>Market Data</i> section</li>
-            <li>Create an asset profile</li>
-            <li>Select <i>Add Manually</i> and enter a unique symbol</li>
-            <li>Edit your asset profile</li>
-            <li>Add a new activity by searching for the symbol</li>
+            <li>開啟「<i>管理</i>」控制台</li>
+            <li>切換到「<i>市場資料</i>」分頁</li>
+            <li>建立一檔資產設定</li>
+            <li>選擇「<i>手動新增</i>」並輸入一個唯一的代碼</li>
+            <li>編輯該檔資產設定</li>
+            <li>透過搜尋該代碼新增一筆交易紀錄</li>
           </ol>
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>How do I set up <i>Markets</i>?</mat-card-title>
+          <mat-card-title>如何設定<i>市場</i>頁面？</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <ol>
-            <li>Open the <i>Admin Control</i> panel</li>
-            <li>Navigate to the <i>Market Data</i> section</li>
-            <li>Choose an asset profile</li>
+            <li>開啟「<i>管理</i>」控制台</li>
+            <li>切換到「<i>市場資料</i>」分頁</li>
+            <li>選擇一檔資產設定</li>
             <li>
-              In the dialog, check the <i>Include in Benchmark / Markets</i> box
+              在對話框中勾選「<i>納入比較基準 / 市場</i>」
             </li>
           </ol>
           <p>
-            Please note: Data is cached, meaning changes may take a few minutes
-            to appear.
+            請注意：資料會被快取，設定後可能需要幾分鐘才會反映在介面上。
           </p>
         </mat-card-content>
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>Which devices are supported?</mat-card-title>
+          <mat-card-title>支援哪些裝置？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          >Ghostfolio works in every modern web browser on smartphones, tablets
-          and desktop computers.</mat-card-content
+          >Ghostfolio 在所有現代瀏覽器中都能執行，無論是智慧型手機、平板電腦或桌上型電腦。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
           <mat-card-title
-            >Is there a mobile app for the self-hosting version of Ghostfolio
-            available in the app store?</mat-card-title
+            >自架版本的 Ghostfolio 在 App 商店有對應的行動 App 嗎？</mat-card-title
           >
         </mat-card-header>
         <mat-card-content
-          >No, there is no mobile app for the self-hosting version of Ghostfolio
-          available in the app store. However, you can add the web app to your
-          home screen (e.g. by selecting <i>Add to Home screen</i> in
-          <i>Google Chrome</i>), which provides the same user
-          experience.</mat-card-content
+          >沒有。自架版本的 Ghostfolio 在 App 商店沒有對應的行動 App。
+          不過你可以把網頁應用程式加到主畫面（例如在 <i>Google Chrome</i> 中選「<i>加到主畫面</i>」），體驗與 App 幾乎相同。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title
-            >What is the best approach to managing backups?</mat-card-title
-          >
+          <mat-card-title>備份的最佳做法是什麼？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          >It is suggested to regularly back up your data by utilizing full
-          database dumps.</mat-card-content
+          >建議定期透過完整的資料庫匯出（database dump）備份你的資料。</mat-card-content
         >
       </mat-card>
       <mat-card appearance="outlined" class="mb-3">
         <mat-card-header>
-          <mat-card-title>Got any other questions?</mat-card-title>
+          <mat-card-title>還有其他問題嗎？</mat-card-title>
         </mat-card-header>
         <mat-card-content
-          >Please join the Ghostfolio
+          >歡迎加入 Ghostfolio
           <a
             href="https://join.slack.com/t/ghostfolio/shared_invite/zt-vsaan64h-F_I0fEo5M0P88lP9ibCxFg"
-            title="Join the Ghostfolio Slack community"
-            >Slack </a
-          >community, post to
+            title="加入 Ghostfolio Slack 社群"
+            >Slack</a
+          >
+          社群、在 X 上發文給
           <a
             href="https://x.com/ghostfolio_"
-            title="Post to Ghostfolio on X (formerly Twitter)"
+            title="在 X（原 Twitter）上向 Ghostfolio 發文"
             >&#64;ghostfolio_</a
           >
-          or start a discussion at
+          ，或到
           <a
             href="https://github.com/ghostfolio/ghostfolio"
-            title="Find Ghostfolio on GitHub"
+            title="在 GitHub 上找到 Ghostfolio"
             >GitHub</a
-          >.</mat-card-content
+          >
+          發起討論。</mat-card-content
         >
       </mat-card>
     </div>
