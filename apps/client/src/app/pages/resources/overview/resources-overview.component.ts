@@ -13,25 +13,22 @@ export class ResourcesOverviewComponent {
   public overviewItems = [
     {
       description:
-        'Find quick answers to commonly asked questions about Ghostfolio in our Frequently Asked Questions (FAQ) section.',
+        '在「常見問題（FAQ）」中快速找到 Ghostfolio 常見問題的解答。',
       routerLink: publicRoutes.faq.routerLink,
       title: publicRoutes.faq.title
     },
     {
-      description:
-        'Explore our guides to help you get started with investing and managing your finances.',
+      description: '透過我們的指南開始你的投資與財務管理之路。',
       routerLink: publicRoutes.resources.subRoutes.guides.routerLink,
       title: publicRoutes.resources.subRoutes.guides.title
     },
     {
-      description:
-        'Access various market resources and tools to stay informed about financial markets.',
+      description: '取得多元的市場資源與工具，掌握金融市場最新動態。',
       routerLink: publicRoutes.resources.subRoutes.markets.routerLink,
       title: publicRoutes.resources.subRoutes.markets.title
     },
     {
-      description:
-        'Learn key financial terms and concepts in our comprehensive glossary.',
+      description: '在完整的詞彙表中認識重要的金融術語與概念。',
       routerLink: publicRoutes.resources.subRoutes.glossary.routerLink,
       title: publicRoutes.resources.subRoutes.glossary.title
     }
