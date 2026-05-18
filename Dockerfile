@@ -50,7 +50,7 @@ RUN npm run database:generate-typings
 
 # Image to run, copy everything needed from builder
 FROM node:22-slim
-LABEL org.opencontainers.image.source="https://github.com/ghostfolio/ghostfolio"
+LABEL org.opencontainers.image.source="https://github.com/charles0568/ghostfolio"
 ENV NODE_ENV=production
 
 RUN apt-get update && apt-get install -y --no-install-suggests \
