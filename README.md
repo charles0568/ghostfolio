@@ -223,7 +223,7 @@ services:
     command:
       - /bin/sh
       - -c
-      - redis-server --requirepass "$${REDIS_PASSWORD:?REDIS_PASSWORD variable is not set}"
+      - redis-server --requirepass "$${REDIS_PASSWORD:?REDIS_PASSWORD variable is not set}" --save "" --appendonly no
     healthcheck:
       test:
         ['CMD-SHELL', 'redis-cli --pass "$${REDIS_PASSWORD}" ping | grep PONG']
@@ -354,7 +354,7 @@ services:
     command:
       - /bin/sh
       - -c
-      - redis-server --requirepass "$${REDIS_PASSWORD}"
+      - redis-server --requirepass "$${REDIS_PASSWORD}" --save "" --appendonly no
     healthcheck:
       test: ['CMD-SHELL', 'redis-cli --pass "$${REDIS_PASSWORD}" ping | grep PONG']
       interval: 10s
