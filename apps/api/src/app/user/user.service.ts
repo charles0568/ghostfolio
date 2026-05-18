@@ -25,7 +25,6 @@ import { PrismaService } from '@ghostfolio/api/services/prisma/prisma.service';
 import { PropertyService } from '@ghostfolio/api/services/property/property.service';
 import { TagService } from '@ghostfolio/api/services/tag/tag.service';
 import {
-  DEFAULT_CURRENCY,
   DEFAULT_USER_BASE_CURRENCY,
   DEFAULT_LANGUAGE_CODE,
   PROPERTY_IS_READ_ONLY_MODE,
