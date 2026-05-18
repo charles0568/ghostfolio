@@ -977,7 +977,7 @@
       </trans-unit>
       <trans-unit id="8749037557473547440" datatype="html">
         <source>Symbol Mapping</source>
-        <target state="translated">程式碼映射</target>
+        <target state="translated">代號映射</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/client/src/app/components/admin-market-data/asset-profile-dialog/asset-profile-dialog.html</context>
           <context context-type="linenumber">387</context>
@@ -1041,7 +1041,7 @@
       </trans-unit>
       <trans-unit id="2691619717359603230" datatype="html">
         <source>Name, symbol or ISIN</source>
-        <target state="translated">名稱、程式碼或 ISIN</target>
+        <target state="translated">名稱、代號或 ISIN</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/client/src/app/components/admin-market-data/asset-profile-dialog/asset-profile-dialog.html</context>
           <context context-type="linenumber">133</context>
@@ -2205,7 +2205,7 @@
       </trans-unit>
       <trans-unit id="1257540657265073416" datatype="html">
         <source>Please enter your coupon code.</source>
-        <target state="translated">請輸入您的優惠券程式碼。</target>
+        <target state="translated">請輸入您的優惠碼。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/client/src/app/components/user-account-membership/user-account-membership.component.ts</context>
           <context context-type="linenumber">210</context>
@@ -2213,7 +2213,7 @@
       </trans-unit>
       <trans-unit id="4420880039966769543" datatype="html">
         <source>Could not redeem coupon code</source>
-        <target state="translated">無法兌換優惠券程式碼</target>
+        <target state="translated">無法兌換優惠碼</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/client/src/app/components/user-account-membership/user-account-membership.component.ts</context>
           <context context-type="linenumber">174</context>
@@ -2221,7 +2221,7 @@
       </trans-unit>
       <trans-unit id="4819099731531004979" datatype="html">
         <source>Coupon code has been redeemed</source>
-        <target state="translated">優惠券程式碼已被兌換</target>
+        <target state="translated">優惠碼已被兌換</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/client/src/app/components/user-account-membership/user-account-membership.component.ts</context>
           <context context-type="linenumber">187</context>
@@ -7155,7 +7155,7 @@
       </trans-unit>
       <trans-unit id="6973601224334878334" datatype="html">
         <source>Get access to 80’000+ tickers from over 50 exchanges</source>
-        <target state="translated">獲取來自 50 多個交易所的 80,000+ 股票程式碼存取權限</target>
+        <target state="translated">獲取來自 50 多個交易所的 80,000+ 股票代號存取權限</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/ui/src/lib/i18n.ts</context>
           <context context-type="linenumber">25</context>
@@ -8061,7 +8061,7 @@
       </trans-unit>
       <trans-unit id="2813275520458225294" datatype="html">
         <source>Fuel your <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>self-hosted Ghostfolio<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> with a <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>powerful data provider<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> to access <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>80,000+ tickers<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> from over <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>50 exchanges<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> worldwide.</source>
-        <target state="translated">使用 <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>強大的資料提供商<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>為您的 <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>自托管 Ghostfolio<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> 提供資料，存取來自全球超過 <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>50 家交易所<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> 的 <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>80,000+ 個股票程式碼<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>。</target>
+        <target state="translated">使用 <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>強大的資料提供商<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>為您的 <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>自托管 Ghostfolio<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> 提供資料，存取來自全球超過 <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>50 家交易所<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> 的 <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>80,000+ 個股票代號<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/client/src/app/components/admin-settings/admin-settings.component.html</context>
           <context context-type="linenumber">16</context>
